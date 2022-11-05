@@ -6,7 +6,7 @@ const LivroHasAutor = require("../models/LivroHasAutorModel");
 const router = Router();
 
 router.post("/livro", async (req, res) => {
-  const { titulo, dataDePubicacao, subtitulo, autores } = req.body;
+  const { titulo, dataDePubicacao, subtitulo } = req.body;
 
   try {
     const livro = await Livro.create({
@@ -15,12 +15,18 @@ router.post("/livro", async (req, res) => {
       subtitulo: subtitulo
     });
 
-    const livroComAutores = {
-      ...livro,
-      autores: [...autores]
-    };
+    return res.json(livro);
+  } catch (err) {
+    console.log(err);
+    return res.send({ erros: { mensagem: "Ocorreu um erro..." } });
+  }
+});
 
-    return res.json(livroComAutores);
+router.get("/livro", async (req, res) => {
+  try {
+    const livros = await Livro.findAll();
+
+    return res.json(livros);
   } catch (err) {
     console.log(err);
     return res.send({ erros: { mensagem: "Ocorreu um erro..." } });
