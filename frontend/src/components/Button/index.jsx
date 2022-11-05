@@ -7,7 +7,7 @@ function Logo({ text, color, textColor, Icon }) {
       style={{ background: color, color: textColor }}
     >
       {text}
-      {Icon && <Icon />}
+      <span className={styles.icon}>{Icon && <Icon />}</span>
     </button>
   );
 }

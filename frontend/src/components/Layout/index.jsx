@@ -3,6 +3,7 @@ import Logo from "../Logo";
 import Button from "../Button";
 import { useEffect, useState } from "react";
 import Livro from "../Livro";
+import { AiOutlinePlusCircle } from "react-icons/ai";
 
 function Layout() {
   const [livros, setLivros] = useState([]);
@@ -18,8 +19,18 @@ function Layout() {
       <header className={styles.header}>
         <Logo />
         <div className={styles.buttonContainer}>
-          <Button text="Cadastrar Livro" color="#28a745" textColor="#fff" />
-          <Button text="Cadastrar Autor" color="#e0a800" textColor="#fff" />
+          <Button
+            text="Cadastrar Livro"
+            color="#28a745"
+            textColor="#fff"
+            Icon={AiOutlinePlusCircle}
+          />
+          <Button
+            text="Cadastrar Autor"
+            color="#e0a800"
+            textColor="#fff"
+            Icon={AiOutlinePlusCircle}
+          />
         </div>
       </header>
       <main className={styles.main}>
