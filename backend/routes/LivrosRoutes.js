@@ -17,6 +17,7 @@ router.post("/livro", async (req, res) => {
 
     return res.json(livro);
   } catch (err) {
+    console.log(err);
     return res.send({ erros: { mensagem: "Ocorreu um erro..." } });
   }
 });
@@ -24,13 +25,10 @@ router.post("/livro", async (req, res) => {
 router.delete("/livro/:id", async (req, res) => {
   const { id } = req.params;
   try {
+    console.log("AQUI");
     const livro = Livro.findByPk(id);
-    if (livro == 0) {
-      const livroDeletado = await Livro.destroy({ where: { id: id } });
-      res.json(livroDeletado);
-    } else {
-      res.json({ erros: { mensagem: "Livro não existe" } });
-    }
+    const livroDeletado = await Livro.destroy({ where: { id: id } });
+    res.json(livroDeletado);
   } catch (err) {
     console.log(err);
     return res.send({ erros: { mensagem: "Ocorreu um erro..." } });
@@ -43,6 +41,8 @@ router.put("/livro/:id", async (req, res) => {
 
   try {
     const livro = await Livro.findByPk(id);
+
+    console.log(livro, "OK");
 
     if (titulo) {
       await Livro.update(

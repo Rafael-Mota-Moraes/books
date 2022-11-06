@@ -1,0 +1,8 @@
+.livros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+  min-height: calc(100vh - 150px);
+  background: #999;
+}

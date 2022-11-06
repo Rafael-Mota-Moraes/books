@@ -8,3 +8,7 @@ body {
   height: 100vh;
   font-family: "Times New Roman", Times, serif;
 }
+
+a {
+  text-decoration: none;
+}

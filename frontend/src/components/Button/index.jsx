@@ -1,10 +1,11 @@
 import styles from "./styles.module.css";
 
-function Logo({ text, color, textColor, Icon }) {
+function Button({ text, color, textColor, Icon, onClick }) {
   return (
     <button
       className={styles.button}
       style={{ background: color, color: textColor }}
+      onClick={onClick}
     >
       {text}
       <span className={styles.icon}>{Icon && <Icon />}</span>
@@ -12,4 +13,4 @@ function Logo({ text, color, textColor, Icon }) {
   );
 }
 
-export default Logo;
+export default Button;

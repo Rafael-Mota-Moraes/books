@@ -18,4 +18,15 @@ router.post("/autor", async (req, res) => {
   }
 });
 
+router.get("/autor", async (req, res) => {
+  try {
+    const autores = await Autor.findAll();
+
+    res.json(autores);
+  } catch (err) {
+    console.log(err);
+    return res.send({ erros: { mensagem: "Ocorreu um erro..." } });
+  }
+});
+
 module.exports = router;
