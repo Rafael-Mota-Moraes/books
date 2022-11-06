@@ -8,6 +8,7 @@ import LivrosPage from "../pages/LivrosPage";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";
 import NovoLivroPage from "../pages/NovoLivroPage";
 import EditarLivro from "../pages/EditarLivroPage";
+import LivroPage from "../pages/LivroPage";
 
 function Layout() {
   const [livros, setLivros] = useState([]);
@@ -44,6 +45,7 @@ function Layout() {
           <Route path="/" element={<LivrosPage livros={livros} />} />
           <Route path="/novo-livro" element={<NovoLivroPage />} />
           <Route path="/editar-livro/:id" element={<EditarLivro />} />
+          <Route path="/livro/:id" element={<LivroPage />} />
         </Routes>
       </main>
       <footer className={styles.footer}>
