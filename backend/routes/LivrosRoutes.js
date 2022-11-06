@@ -25,8 +25,6 @@ router.post("/livro", async (req, res) => {
 router.delete("/livro/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    console.log("AQUI");
-    const livro = Livro.findByPk(id);
     const livroDeletado = await Livro.destroy({ where: { id: id } });
     res.json(livroDeletado);
   } catch (err) {
@@ -41,8 +39,6 @@ router.put("/livro/:id", async (req, res) => {
 
   try {
     const livro = await Livro.findByPk(id);
-
-    console.log(livro, "OK");
 
     if (titulo) {
       await Livro.update(
