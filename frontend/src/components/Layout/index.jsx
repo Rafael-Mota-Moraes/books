@@ -2,7 +2,6 @@ import styles from "./styles.module.css";
 import Logo from "../Logo";
 import Button from "../Button";
 import { useEffect, useState } from "react";
-import Livro from "../Livro";
 import { AiOutlinePlusCircle } from "react-icons/ai";
 import LivrosPage from "../pages/LivrosPage";
 import { Routes, Route, useNavigate, Link } from "react-router-dom";

@@ -28,6 +28,7 @@ function Livro({ livro }) {
       <Link to={`/livro/${livro.id}`}>
         <h2 className={styles.titulo}>{livro.titulo}</h2>
         <h3 className={styles.subtitulo}>{livro.subtitulo}</h3>
+        <h3 className={styles.subtitulo}>Autor: {livro.autor}</h3>
       </Link>
       <div className={styles.buttons}>
         <Button

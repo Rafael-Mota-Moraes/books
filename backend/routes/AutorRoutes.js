@@ -1,7 +1,6 @@
 const { Router } = require("express");
 const Livro = require("../models/LivroModel");
 const Autor = require("../models/AutorModel");
-const LivroHasAutor = require("../models/LivroHasAutorModel");
 
 const router = Router();
 

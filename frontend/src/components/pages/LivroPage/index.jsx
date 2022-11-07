@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";
+import Button from "../../Button";
 
 function LivroPage() {
   const [livro, setLivro] = useState({});
@@ -12,7 +13,6 @@ function LivroPage() {
     fetch(`http://localhost:3333/livro/${params.id}`)
       .then((resp) => resp.json())
       .then((json) => setLivro(json));
-    console.log(livro);
   }, []);
 
   let data;
@@ -28,8 +28,7 @@ function LivroPage() {
       <h1 className={styles.titulo}>{livro.titulo}</h1>
       <h2 className={styles.subtitulo}>{livro.subtitulo}</h2>
       <div>
-        <h2>Autores</h2>
-        <p>Sem autores cadastrados</p>
+        <h2>Autor: {livro.autor}</h2>
       </div>
       <h2 className={styles.data}>Publicado em: {data}</h2>
     </section>

@@ -8,6 +8,7 @@ import styles from "./styles.module.css";
 function EditarLivro() {
   const [titulo, setTitulo] = useState("");
   const [subtitulo, setSubtitulo] = useState("");
+  const [autor, setAutor] = useState("");
 
   const params = useParams();
   const navigate = useNavigate();
@@ -20,6 +21,7 @@ function EditarLivro() {
       .then((json) => {
         setTitulo(json.titulo);
         setSubtitulo(json.subtitulo);
+        setAutor(json.autor);
       });
   }, []);
 
@@ -46,6 +48,11 @@ function EditarLivro() {
       <TextInput
         value={subtitulo}
         onChange={setSubtitulo}
+        placeholder="Novo Subtitulo:"
+      />
+      <TextInput
+        value={autor}
+        onChange={setAutor}
         placeholder="Novo Subtitulo:"
       />
 

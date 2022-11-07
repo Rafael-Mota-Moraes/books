@@ -8,6 +8,7 @@ function LovoLivroPage() {
   const [titulo, setTitulo] = useState("");
   const [subtitulo, setSubtitulo] = useState("");
   const [data, setData] = useState("");
+  const [autor, setAutor] = useState("");
 
   const navigate = useNavigate("/");
 
@@ -25,7 +26,8 @@ function LovoLivroPage() {
           body: JSON.stringify({
             titulo: titulo,
             subtitulo: subtitulo,
-            dataDePubicacao: novaData
+            dataDePubicacao: novaData,
+            autor: autor
           })
         }).then(() => {
           navigate("/");
@@ -44,6 +46,7 @@ function LovoLivroPage() {
         onChange={setSubtitulo}
         placeholder="Subtitulo:"
       />
+      <TextInput value={autor} onChange={setAutor} placeholder="Autor:" />
       <input
         type="date"
         value={data}

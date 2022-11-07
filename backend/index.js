@@ -1,6 +1,5 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const LivroHasAutor = require("./models/LivroHasAutorModel.js");
 const LivrosRoutes = require("./routes/LivrosRoutes");
 const AutorRoutes = require("./routes/AutorRoutes");
 const cors = require("cors");
